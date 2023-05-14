@@ -20,6 +20,7 @@ class Solution:
             else:
                 digitStr.append(log)
 
+        # 근데 이렇게 그냥 sort 함수 써버리면 연습의 의미가 있나? sorting 알고리즘을 구현해야 하는거 아닌가? 흠...
         letterStr.sort(key=lambda x: (x.split()[1:], x.split()[0]))
         return letterStr + digitStr
 
