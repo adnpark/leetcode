@@ -10,7 +10,6 @@
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         words = re.split(r'[ \n\r\t.,;!?\']+', paragraph.lower())
-        print(words)
         words = [word for word in words if word not in banned and word != '']
         wordDict = {}
         for word in words:
@@ -30,3 +29,4 @@ class Solution:
 
         counts = collections.Counter(words)
         return counts.most_common(1)[0][0]
+        # [['ball', 2], ...]

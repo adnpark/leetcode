@@ -16,11 +16,13 @@ class Solution:
         for str in range(len(strs)):
             str_char_count = {}
             anagrams: List[str] = []
+            # 주어진 str의 char count를 센다.
             for char in str:
                 if char in str_char_count:
                     str_char_count[char] += 1
                 else:
                     str_char_count[char] = 1
+            # 나머지 str의 char count를 세면서 위에서 구한 char count dict 와 같은지 확인한다.
             for i in range(str + 1, len(strs)):
                 str_i_char_count = {}
                 for char in strs[i]:

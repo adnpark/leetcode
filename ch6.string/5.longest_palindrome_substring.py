@@ -5,6 +5,10 @@
 4. 마지막으로 string의 length가 홀수인 경우, result string의 가운데에 count가 홀수인 char를 하나 삽입한다.
 => 이 알고리즘은 잘못됐음 
 문제 이해를 잘못했다! substring은 string의 순서를 바꾸면 안됐음!
+"abbd"
+"bab"
+"bb"
+
 """
 
 
@@ -50,9 +54,15 @@ class Solution:
             while left >= 0 and right <= len(s) and s[left] == s[right-1]:
                 left -= 1
                 right += 1
+                # 'abcde'
+                # 'ptr' -> aba
+                # 'pt' -> bb
+                # 'ababa'
+                # 'aba'
             return s[left+1:right-1]
 
         result = ""
         for i in range(len(s)-1):
+            # two pointer
             result = max(result, expand(i, i+1), expand(i, i+2), key=len)
         return result
