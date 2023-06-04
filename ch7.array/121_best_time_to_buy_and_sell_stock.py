@@ -37,7 +37,7 @@ class Solution:
         for i in enumerate(prices):
             profit = 0
             min_price = prices[i]
-            max_price = max(prices[i + 1:])
+            max_price = max(prices[i + 1:])  # 문제가 되는 부분 여기서 O(n) 이 추가됨
             if max_price < min_price:
                 profit = 0
             else:

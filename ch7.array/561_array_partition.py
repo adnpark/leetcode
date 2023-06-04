@@ -13,5 +13,5 @@ class Solution:
         nums.sort()  # 먼저 정렬
         result = 0
         for i in range(0, length, 2):
-            result += min(i, i+1)
+            result += nums[i]  # 여기서 min을 쓸 필요는 없다.
         return result
