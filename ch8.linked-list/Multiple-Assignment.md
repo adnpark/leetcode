@@ -4,13 +4,13 @@
 
 앞의 문제에서 이렇게 다중할당을 했는데, 가독성도 떨어지는데 왜 이렇게 했을까?
 
-```python3
+```python
 rev, rev.next, slow = slow, rev, slow.next
 ```
 
 아래처럼 하면 깔끔할 것 같은데 왜 이렇게 안했을까?
 
-```python3
+```python
 fast = fast.next.next
 rev, rev.next = slow, rev
 slow = slow.next
@@ -21,7 +21,7 @@ slow = slow.next
 
 rev = 1, slow = 2 -> 3 이라고 가정해보자.
 
-```python3
+```python
 rev, rev.next, slow = slow, rev, slow.next
 ```
 
@@ -32,7 +32,7 @@ rev.next = 1 이 되었으므로, 최종적으로 rev = 2->1, slow = 3 이 된�
 
 하지만 아래와 같이 할당을 하게 되면
 
-```python3
+```python
 rev, rev.next = slow, rev
 slow = slow.next
 ```

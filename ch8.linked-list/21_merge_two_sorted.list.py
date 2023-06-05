@@ -40,6 +40,7 @@ class Solution:
                 l2.next = self.mergeTwoLists(l1, l2.next)
                 return l2
 
+
 # 반복문을 이용한 풀이
 
 
